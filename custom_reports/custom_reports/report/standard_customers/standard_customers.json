@@ -1,0 +1,50 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-01-31 20:44:24.231966",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-07-08 01:56:51.414155",
+ "modified_by": "Administrator",
+ "module": "Custom Reports",
+ "name": "Standard Customers",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    `tabCustomer`.`name` AS `\u0627\u0633\u0645 \u0627\u0644\u0639\u0645\u064a\u0644`,\n    `tabCustomer`.`custom_vat_registration_number` AS `\u0627\u0644\u0631\u0642\u0645 \u0627\u0644\u0636\u0631\u064a\u0628\u064a \u0644\u0644\u0639\u0645\u064a\u0644`,\n    `tabAdditional Buyer IDs`.`type_name` AS `\u0646\u0648\u0639 \u0627\u0644\u0645\u0633\u062a\u0646\u062f`,\n    `tabAdditional Buyer IDs`.`value` AS `\u0631\u0642\u0645 \u0627\u0644\u0645\u0633\u062a\u0646\u062f`\nFROM \n    `tabCustomer`\nLEFT JOIN \n    `tabAdditional Buyer IDs` \n    ON `tabCustomer`.`customer_name` = `tabAdditional Buyer IDs`.`parent`\nWHERE \n    `tabAdditional Buyer IDs`.`type_name` IS NOT NULL \n    AND `tabAdditional Buyer IDs`.`type_name` != ''\n    AND (\n        `tabCustomer`.`custom_vat_registration_number` IS NOT NULL \n        AND `tabCustomer`.`custom_vat_registration_number` != ''\n        OR\n        `tabAdditional Buyer IDs`.`value` IS NOT NULL \n        AND `tabAdditional Buyer IDs`.`value` != ''\n    )\n    AND (\n        `tabAdditional Buyer IDs`.`value` IS NOT NULL \n        OR \n        `tabAdditional Buyer IDs`.`type_name` = 'Commercial Registration Number'\n    )\nGROUP BY \n    `tabCustomer`.`name`\nORDER BY \n    `tabCustomer`.`name`;\n",
+ "ref_doctype": "Customer",
+ "report_name": "Standard Customers",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Sales Master Manager"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "Employee Self Service"
+  }
+ ],
+ "timeout": 0
+}

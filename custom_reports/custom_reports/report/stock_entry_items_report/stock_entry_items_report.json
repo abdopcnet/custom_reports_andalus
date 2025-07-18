@@ -1,0 +1,47 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-07-08 02:30:39.725324",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-07-08 03:00:08.266422",
+ "modified_by": "Administrator",
+ "module": "Custom Reports",
+ "name": "Stock Entry Items Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "",
+ "ref_doctype": "Stock Entry",
+ "report_name": "Stock Entry Items Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "pos_user"
+  },
+  {
+   "role": "stock_trasfer"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "sales_orders"
+  }
+ ],
+ "timeout": 0
+}
